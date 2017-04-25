@@ -1,0 +1,13 @@
+<div>
+  <%= form_tag login_path, method: :post  do %>
+      <p>User:</p>
+      <p><%= text_field_tag :user_name %></p>
+
+      <p>Dialect:</p>
+      <p><%= text_field_tag :dialect %></p>
+
+      <p>Room:</p>
+      <p><%= select_tag :chat_room, options_from_collection_for_select(@rooms, 'id', 'name') %></p>
+      <p><%= submit_tag :login %></p>
+  <% end %>
+</div>
