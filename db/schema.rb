@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425133244) do
+ActiveRecord::Schema.define(version: 20170426121922) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string "name"
   end
 
   create_table "messages", force: :cascade do |t|
-    t.text    "body"
-    t.string  "dialect"
-    t.string  "user_name"
-    t.integer "chat_room_id"
+    t.text     "body"
+    t.string   "dialect"
+    t.string   "user_name"
+    t.integer  "chat_room_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
