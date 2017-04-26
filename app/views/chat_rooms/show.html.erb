@@ -12,6 +12,7 @@
           <%= f.label :body %>
           <%= f.text_area :body, class: 'form-control' %>
           <%= f.hidden_field :user_name, value: session['user_name'] %>
+          <%= f.hidden_field :dialect, value: session['dialect'] %>
           <small class="text-muted">From 2 to 1000 characters</small>
         </div>
 
