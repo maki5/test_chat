@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426121922) do
+ActiveRecord::Schema.define(version: 20170426130241) do
+
+  create_table "active_users", force: :cascade do |t|
+    t.string   "user_name"
+    t.datetime "logged_in"
+  end
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string "name"
@@ -23,6 +28,15 @@ ActiveRecord::Schema.define(version: 20170426121922) do
     t.integer  "chat_room_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
+    t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
 end
