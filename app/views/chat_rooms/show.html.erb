@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-9" id="messages" data-chat-room-id="<%= @chat_room.id %>">
+    <% @chat_room.messages.each do |mes| %>
+        <%= render partial: 'messages/message', locals: {message: mes} %>
+    <% end %>
+  </div>
+  <div>
+    <p>
+      <%= form_for @message, url: '#' do |f| %>
+        <div class="form-group">
+          <%= f.label :body %>
+          <%= f.text_area :body, class: 'form-control' %>
+          <small class="text-muted">From 2 to 1000 characters</small>
+        </div>
+
+        <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
+      <% end %>
+    </p>
+  </div>
+  <div class="col-sm-3">
+
+  </div>
+</div>
