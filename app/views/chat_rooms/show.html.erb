@@ -22,8 +22,10 @@
   </div>
   <div class="col-sm-3">
     <p>Active users:</p>
-    <% ActiveUser.now.each do |p| %>
-        <%= p.user_name %>
-    <% end %>
+    <ul>
+        <% ActiveUser.now.each do |p| %>
+            <li><%= p.user_name %></li>
+        <% end %>
+    </ul>
   </div>
 </div>
